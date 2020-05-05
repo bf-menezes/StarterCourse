@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Exercicio</title>
+    </head>
+
+    <body>
+        <div id="app">
+            <button class="button">Caixa Vermelha</button>            
+        </div>
+
+        <script>         
+
+            var ButtonElement = document.querySelector('.button');
+            
+            ButtonElement.onclick = function () {
+
+                var BoxClass = document.createElement('div');
+                BoxClass.setAttribute('class', 'box')
+                BoxClass.setAttribute('style', 'width: 100px; height: 100px; background-color: #f00; margin: 5px')
+                
+                var AppContainer = document.getElementById('app');
+                AppContainer.appendChild(BoxClass);
+                                              
+            }
+          
+        </script>
+    </body>
+</html>

@@ -1,0 +1,47 @@
+<html>
+
+<head>
+    <title>Exercicio</title>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" name="nome">
+        <button onClick="adicionar()">Adicionar</button>        
+    </div>
+
+    <script>
+        var nomes = ["Diego", "Gabriel", "Lucas",]                       
+        
+        var AppContainer = document.getElementById('app')
+        var Lista = document.createElement('ul')
+        AppContainer.appendChild(Lista)
+    
+        var TituloLista = document.createTextNode('Nomes:')
+        Lista.appendChild(TituloLista)
+         
+        for (var nome of nomes) {
+            var TextoItemLista = document.createTextNode(`${nome}`)
+            var ItemLista = document.createElement('li')
+            Lista.appendChild(ItemLista)
+            ItemLista.appendChild(TextoItemLista)
+        }
+    
+        var InputElement = document.querySelector('input[type=text]')
+        var ButtonElement = document.getElementsByTagName('button')
+    
+        function adicionar() {
+            var InputText = document.createTextNode(InputElement.value)
+            var ItemLista = document.createElement('li')
+            Lista.appendChild(ItemLista)
+            ItemLista.appendChild(InputText)
+            InputElement.value = ''
+        }
+        
+    </script>
+
+
+</body>
+
+
+</html>

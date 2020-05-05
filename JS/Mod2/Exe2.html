@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>Exercicio</title>
+    </head>
+
+    <body>
+        <div id="app">
+            <button class="button">Caixa Vermelha</button>            
+        </div>
+
+        <script>         
+
+            var ButtonElement = document.querySelector('.button');
+            
+            ButtonElement.onclick = function () {
+
+                var Box = document.createElement('div');
+                Box.setAttribute('class', 'box')
+                Box.setAttribute('style', 'width: 100px; height: 100px; background-color: #f00; margin: 5px')
+                
+                var AppContainer = document.getElementById('app');
+                AppContainer.appendChild(Box);
+
+                Box.onmouseover = function () {
+                    
+                    function getRandomColor() {
+                        var letters = "0123456789ABCDEF";
+                        var color = "#";
+                            for (var i = 0; i < 6; i++) {
+                            color += letters[Math.floor(Math.random() * 16)];
+                            }
+                            return color;
+                        }
+                    
+                    var newColor = getRandomColor();
+
+                    Box.setAttribute('style', `width: 100px; height: 100px; background-color: ${newColor}; margin: 5px`)
+
+                
+                                      
+                }   
+   
+                     
+            }
+            
+
+            
+          
+        </script>
+    </body>
+</html>
